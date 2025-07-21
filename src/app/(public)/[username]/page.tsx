@@ -11,6 +11,7 @@ const Page = async ({ params }: { params: Promise<{ username: string }> }) => {
   if (!data.ok) {
     // Handle HTTP errors
     throw new Error(`Failed to fetch cards: ${data.status}`);
+    // console.log("Failed to fetch cards:", data.status);
   }
 
   const cards: CardResponse = await data.json();
